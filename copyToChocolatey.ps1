@@ -1,5 +1,5 @@
 ﻿$chocolatey = "C:\Chocolatey"
-$libName = "rabbit2"
+$libName = "rabbit"
 $libfolder = "$chocolatey\lib\$libname"
 $libBin = "$chocolatey\bin\rabbit.bat"
 $currentPath =  $myinvocation.mycommand.path | split-path -parent
