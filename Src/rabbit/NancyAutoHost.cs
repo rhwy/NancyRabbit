@@ -70,7 +70,7 @@ namespace rabbit
 
         private void SourceBuild()
         {
-            var sourceFiles = Directory.GetFiles(_sourceWatchFolder);
+            var sourceFiles = Directory.GetFiles(_sourceWatchFolder,"*.cs");
             Console.WriteLine("{0} source files found", sourceFiles.Length);
             Console.WriteLine("Start compiling");
             Compile(sourceFiles);
@@ -150,6 +150,16 @@ namespace rabbit
 
             CodeDomProvider codeProvider = new CSharpCodeProvider();
             CompilerResults results = codeProvider.CompileAssemblyFromFile(compilerParams, sources);
+
+            if(results.Errors.Count > 0)
+            {
+                Console.WriteLine("Error found while recompiling your files:");
+
+                foreach (string line in results.Output)
+                {
+                    Console.WriteLine(line);
+                }
+            }
         }
     }
 }
