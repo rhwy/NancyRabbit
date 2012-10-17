@@ -14,7 +14,7 @@ namespace rabbit
             var watchFolder = new DirectoryInfo(DefaultWatchFolder).FullName;
             if (args.Length >= 1)
             {
-                watchFolder = args[0];
+                watchFolder = new DirectoryInfo(args[0]).FullName;
             }
             if (args.Length >= 2)
             {
