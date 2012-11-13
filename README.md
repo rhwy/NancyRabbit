@@ -24,5 +24,9 @@ So that's the targets of Nancy Rabbit:
 
 **NOTE**:
 
-  this is currently spike code, 
-  tell me if it should be usefull to go deeper with it !
+  This project in it's current state is still a POC (but a working one ;-). Due to the good feedbacks, I am planning making it cleaner and have a lot of stuff in mind.
+  please, put your ideas and feedbacks in the issues section in this github if you have any!
+
+Thanks to [@TheCodeJunkie](https://github.com/thecodejunkie), we have now a small demo of .net web dev with NancyRabbit:
+
+<iframe src="http://player.vimeo.com/video/53459633?badge=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/53459633">Demo of NancyRabbit</a> from <a href="http://vimeo.com/user7634348">Nancy</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
