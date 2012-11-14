@@ -70,7 +70,7 @@ namespace rabbit
 
         private void SourceBuild()
         {
-            var sourceFiles = Directory.GetFiles(_sourceWatchFolder,"*.cs");
+            var sourceFiles = Directory.GetFiles(_sourceWatchFolder,"*.cs", SearchOption.AllDirectories);
             Console.WriteLine("{0} source files found", sourceFiles.Length);
             Console.WriteLine("Start compiling");
             Compile(sourceFiles);
