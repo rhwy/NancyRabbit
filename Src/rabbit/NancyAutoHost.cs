@@ -132,8 +132,6 @@ namespace rabbit
 
         public void Compile(string[] sources)
         {
-
-
             var compilerParams = new CompilerParameters
                                      {
                                          CompilerOptions = "/target:library /optimize",
@@ -146,7 +144,11 @@ namespace rabbit
             compilerParams.ReferencedAssemblies.Add("System.Core.dll");
 
             compilerParams.ReferencedAssemblies.Add("Microsoft.CSharp.dll");
-            compilerParams.ReferencedAssemblies.Add(Path.Combine(_libraryLocation, "Nancy.dll"));
+
+            foreach (var library in Directory.GetFiles(_libraryLocation, "*.dll"))
+            {
+                compilerParams.ReferencedAssemblies.Add(library);
+            }
 
             CodeDomProvider codeProvider = new CSharpCodeProvider();
             CompilerResults results = codeProvider.CompileAssemblyFromFile(compilerParams, sources);
